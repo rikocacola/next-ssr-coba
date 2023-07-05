@@ -1,6 +1,5 @@
-function ProductList(props) {
+const ProductList = (props) => {
   const { promos } = props;
-  console.log("Promo data: ", promos);
   return (
     <>
       <h1>List of promos</h1>
@@ -19,7 +18,6 @@ function ProductList(props) {
 export default ProductList;
 
 export async function getStaticProps() {
-  console.log("Generating / Regenerating ProductList");
   const response = await fetch("http://172.30.114.10:1337/api/promos");
   const data = await response.json();
 
